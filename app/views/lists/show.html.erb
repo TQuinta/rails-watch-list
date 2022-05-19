@@ -1,0 +1,13 @@
+<h2><%= @list.name %></h2>
+
+<% if @list.movies.exists? %>
+  <% @list.movies.each do |movie| %>
+  <p><%= movie.title %></p>
+  <% end %>
+<% else %>
+  <p>No films within this list</p>
+<% end %>
+
+<p><%= link_to "add movie", new_list_bookmark_path(@list) %></p>
+
+<%= link_to "all lists", lists_path %>
